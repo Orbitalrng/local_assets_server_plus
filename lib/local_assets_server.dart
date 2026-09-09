@@ -15,19 +15,19 @@ abstract class Logger {
 // Pass an instance of DebugLogger to view logs only in dev builds
 class DebugLogger implements Logger {
   const DebugLogger();
-  _log(String path, String contentType, int code) {
+  void _log(String path, String contentType, int code) {
     if (!kReleaseMode) {
       debugPrint('GET $path – $code; mime: $contentType');
     }
   }
 
   @override
-  logOk(String path, String contentType) {
+  void logOk(String path, String contentType) {
     _log(path, contentType, 200);
   }
 
   @override
-  logNotFound(String path, String contentType) {
+  void logNotFound(String path, String contentType) {
     _log(path, contentType, 404);
   }
 
@@ -42,10 +42,10 @@ class SilentLogger implements Logger {
   const SilentLogger();
 
   @override
-  logNotFound(String path, String contentType) {}
+  void logNotFound(String path, String contentType) {}
 
   @override
-  logOk(String path, String contentType) {}
+  void logOk(String path, String contentType) {}
 
   @override
   void logDebug(String message) {}
@@ -105,7 +105,7 @@ class LocalAssetsServer {
     await _server?.close();
   }
 
-  _handleReq(HttpRequest request) async {
+  void _handleReq(HttpRequest request) async {
     String path = request.requestedUri.path.replaceFirst('/', '');
 
     if (path == '') {
