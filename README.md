@@ -1,4 +1,4 @@
-# local_assets_server
+# local_assets_server_plus
 
 ## Credits
 This package is based on ([local_assets_server](https://github.com/lesnitsky/local_assets_server)) by [![lesnitsky.dev](https://lesnitsky.dev/shield.svg?hash=120246)](https://lesnitsky.dev?utm_source=local_assets_server), licensed under MIT.
@@ -11,7 +11,7 @@ pubspec.yaml:
 
 ```yaml
 dependencies:
-  local_assets_server: ^2.0.2+10
+  local_assets_server_plus: ^2.0.3
 ```
 
 ## Example
@@ -20,7 +20,7 @@ dependencies:
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:local_assets_server/local_assets_server.dart';
+import 'package:local_assets_server_plus/local_assets_server_plus.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 void main() => runApp(MyApp());
