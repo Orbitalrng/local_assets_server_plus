@@ -1,3 +1,5 @@
+## 2.0.2
+- Now assets path works properly in Windows
 ## 2.0.1+9
 
 - Add logs
