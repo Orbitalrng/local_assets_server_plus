@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
-import 'package:path/path.dart';
+import 'package:path/path.dart' as p;
 import 'package:mime/mime.dart';
 
 import 'package:flutter/services.dart';
@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 abstract class Logger {
   void logOk(String path, String contentType);
   void logNotFound(String path, String contentType);
+  void logDebug(String message) {}
 }
 
 // Pass an instance of DebugLogger to view logs only in dev builds
@@ -20,12 +21,19 @@ class DebugLogger implements Logger {
     }
   }
 
+  @override
   logOk(String path, String contentType) {
     _log(path, contentType, 200);
   }
 
+  @override
   logNotFound(String path, String contentType) {
     _log(path, contentType, 404);
+  }
+
+  @override
+  void logDebug(String message) {
+    if (!kReleaseMode) debugPrint(message);
   }
 }
 
@@ -38,6 +46,9 @@ class SilentLogger implements Logger {
 
   @override
   logOk(String path, String contentType) {}
+
+  @override
+  void logDebug(String message) {}
 }
 
 class AssetsCache {
@@ -101,7 +112,7 @@ class LocalAssetsServer {
       path = 'index.html';
     }
 
-    final name = basename(path);
+    final name = p.basename(path);
     final mime = lookupMimeType(name);
 
     try {
@@ -125,13 +136,13 @@ class LocalAssetsServer {
     }
 
     if (_rootDir == null) {
-      ByteData data = await rootBundle.load(join(assetsBasePath, path));
+      ByteData data = await rootBundle.load(p.posix.join(assetsBasePath, path));
       AssetsCache.assets[path] = data;
       return data;
     }
 
-    print(join(_rootDir!.path, path));
-    final f = File(join(_rootDir!.path, path));
+    logger.logDebug(p.join(_rootDir!.path, path));
+    final f = File(p.join(_rootDir!.path, path));
     return (await f.readAsBytes()).buffer.asByteData();
   }
 }
