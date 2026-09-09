@@ -1,5 +1,6 @@
-## 2.0.2
+## 2.0.3
 - Now assets path works properly in Windows. Updated deps. Added type annotations.
+
 ## 2.0.1+9
 
 - Add logs
