@@ -1,7 +1,9 @@
-name: local_assets_server
+name: local_assets_server_plus
 description: HTTP Server which serves local assets as URL link. Usecase - simplify workflow with mock data. Instead of creating dedicated logic/intercepters/UI workarounds, it creates a server, which returns an actual path to an asset, which works great with CachedNetworkImage/Image.network and etc.
-version: 2.0.2
+version: 2.0.3
 homepage: https://github.com/Orbitalrng/local_assets_server
+repository: https://github.com/Orbitalrng/local_assets_server
+issue_tracker: https://github.com/Orbitalrng/local_assets_server/issues
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
