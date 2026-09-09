@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:local_assets_server/local_assets_server.dart';
+import 'package:local_assets_server_plus/local_assets_server_plus.dart';
 
 void main() {
   test('adds one to input values', () {
