@@ -1,8 +1,7 @@
 # local_assets_server
 
-[![lesnitsky.dev](https://lesnitsky.dev/shield.svg?hash=120246)](https://lesnitsky.dev?utm_source=local_assets_server)
-[![GitHub stars](https://img.shields.io/github/stars/lesnitsky/local_assets_server.svg?style=social)](https://github.com/lesnitsky/local_assets_server)
-[![Twitter Follow](https://img.shields.io/twitter/follow/lesnitsky_dev.svg?label=Follow%20me&style=social)](https://twitter.com/lesnitsky_dev)
+## Credits
+This package is based on ([local_assets_server](https://github.com/lesnitsky/local_assets_server)) by [![lesnitsky.dev](https://lesnitsky.dev/shield.svg?hash=120246)](https://lesnitsky.dev?utm_source=local_assets_server), licensed under MIT.
 
 HTTP Server which serves local assets
 
