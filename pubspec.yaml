@@ -1,16 +1,17 @@
 name: local_assets_server
-description: HTTP Server which serves local assets
-version: 2.0.2+12
-homepage: https://github.com/lesnitsky/local_assets_server
+description: HTTP Server which serves local assets as URL link. Usecase - simplify workflow with mock data. Instead of creating dedicated logic/intercepters/UI workarounds, it creates a server, which returns an actual path to an asset, which works great with CachedNetworkImage/Image.network and etc.
+version: 2.0.2
+homepage: https://github.com/Orbitalrng/local_assets_server
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  mime: ^1.0.0
-  path: ^1.8.0
+  mime: ^2.1.0
+  path: ^1.9.1
 
 dev_dependencies:
   flutter_test:
